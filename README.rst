@@ -52,3 +52,10 @@ action.
 That is it. Define a render method as usual and use the widget on the
 page. Counter will be updated automatically. This works like a magic,
 a framework makes all dirty work under the hood.
+
+
+TODO
+====
+
+* Make a client-side code to reconnect when connection was broken.
+* Add some queue on the backend to store data during reconnects.
