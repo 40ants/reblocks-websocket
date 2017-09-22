@@ -183,6 +183,14 @@ between usual request processing and background activity."
   `(let* ((session weblocks.session::*session*)
           (request weblocks.request:*request*)
           stop-thread)
+
+     ;; Here we need to drop this header if it exists,
+     ;; to make ajax-request-p return false for subsequent calls
+     ;; in the thread.
+     (when (weblocks.request:request-header "X-Requested-With"
+                                            :request request)
+       (weblocks.request:remove-request-header "X-Requested-With"
+                                               :request request))
      
      (bt:make-thread (lambda ()
                        (loop
