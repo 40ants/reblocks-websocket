@@ -202,7 +202,11 @@ between usual request processing and background activity."
                      :name ,thread-name)
 
      (weblocks.hooks:add-application-hook :stop-weblocks
-         stop-counter-thread ()
+         stop-thread ()
+       (setf stop-thread t))
+     
+     (weblocks.hooks:add-application-hook :reset-session
+         stop-thread (session)
        (setf stop-thread t))))
 
 
