@@ -2,6 +2,12 @@
  ChangeLog
 ===========
 
+0.1.1 (unreleased)
+==================
+
+* Now macro ``in-thread`` removes header ``X-Requested-With`` from
+  captured request object. This requires ``weblocks >= 0.14.4``.
+
 0.1.0 (unreleased)
 ==================
 

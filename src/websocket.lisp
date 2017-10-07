@@ -189,8 +189,9 @@ between usual request processing and background activity."
      ;; in the thread.
      (when (weblocks.request:request-header "X-Requested-With"
                                             :request request)
-       (weblocks.request:remove-request-header "X-Requested-With"
-                                               :request request))
+       (setf request
+             (weblocks.request:remove-request-header "X-Requested-With"
+                                                     :request request)))
      
      (bt:make-thread (lambda ()
                        (loop
