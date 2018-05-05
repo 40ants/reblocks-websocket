@@ -1,20 +1,9 @@
-#|
-  This file is a part of weblocks-websocket project.
-|#
-
-
-(in-package :cl-user)
-(defpackage weblocks-websocket-asd
-  (:use :cl :asdf))
-(in-package :weblocks-websocket-asd)
-
-
 (defsystem weblocks-websocket
   :version (:read-file-form "version.lisp-expr")
   :author ""
   :license ""
   :depends-on (
-               :weblocks
+               (:version :weblocks "0.28.0")
                :weblocks-parenscript
                :websocket-driver)
   :components ((:module "src"

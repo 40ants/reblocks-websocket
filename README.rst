@@ -16,6 +16,13 @@ and. In this case, updates of widgets's state on the client are
 initiated by server. For example, you can have some sort of long running
 process on the server and need to show it's status to the user.
 
+Installation
+============
+
+This library depends on Weblocks (replocks branch) Woo server and
+websocket-driver
+([make-woo-work-from-separate-threads](https://github.com/svetlyak40wt/websocket-driver/tree/make-woo-work-from-separate-threads) branch).
+
 
 Usage
 =====
