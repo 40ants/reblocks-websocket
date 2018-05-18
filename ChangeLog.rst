@@ -2,6 +2,33 @@
  ChangeLog
 ===========
 
+0.3.0
+=====
+
+* Added ``send-command`` function, which can be used to call custom
+  functions on the frontend.
+
+  For example, you can update some progress bar's text with such code.
+
+  Add this as a dependency for your widget:
+
+  .. code:: common-lisp
+
+     (weblocks-parenscript:make-dependency*
+       `(setf (@ window command-handlers update-progress)
+              (lambda (params)
+                (let ((new-text (@ params new-text)))
+                
+                  ;; Updating the text of the progress-bar
+                  (chain (j-query ".loading-progress")
+                         (html new-text))))))
+
+  After that, you can call this handler from the server-side:
+  
+  .. code:: common-lisp
+            
+     (weblocks.websocket:send-command 'update-progress
+                                      :new-text "Processed 100500 items")
 0.2.0
 =====
 
