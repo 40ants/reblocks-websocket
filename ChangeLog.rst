@@ -2,6 +2,11 @@
  ChangeLog
 ===========
 
+0.4.0
+=====
+
+* Library was fixed to work with latest ``Woo``.
+
 0.3.0
 =====
 

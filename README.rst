@@ -54,7 +54,7 @@ action.
        (sleep 3)
        ;; Updating counter
        (incf (counter instance))
-       (weblocks:mark-dirty instance)))
+       (weblocks:update instance)))
 
 That is it. Define a render method as usual and use the widget on the
 page. Counter will be updated automatically. This works like a magic,
