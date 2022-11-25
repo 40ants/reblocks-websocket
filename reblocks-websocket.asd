@@ -1,10 +1,9 @@
-(defsystem weblocks-websocket
+(defsystem reblocks-websocket
   :version (:read-file-form "version.lisp-expr")
   :author ""
   :license ""
-  :depends-on (
-               (:version :weblocks "0.28.0")
-               :weblocks-parenscript
+  :depends-on (:reblocks
+               :reblocks-parenscript
                :websocket-driver)
   :components ((:module "src"
                 :components
@@ -23,5 +22,5 @@
           (setf (fill-pointer seq)
                 (read-sequence seq stream))
           seq)))
-  :in-order-to ((test-op (test-op weblocks-websocket-test))))
+  :in-order-to ((test-op (test-op reblocks-websocket-test))))
 
