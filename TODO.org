@@ -1,4 +1,4 @@
 * Improvements
-** TODO Support dependencies loading via websocket commands.
+** TODO Support dependencies loading via websocket commands. Think about replacing CSS styles instead of insering new ones.
 * Fixes
 ** TODO Start only one connection with server if there are more than one websocket widget on the page.
