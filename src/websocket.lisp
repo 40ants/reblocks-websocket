@@ -1,8 +1,11 @@
 (uiop:define-package #:reblocks-websocket
   (:use #:cl)
+  (:nicknames #:reblocks-websocket/websocket)
+  (:import-from #:reblocks-parenscript)
+  (:import-from #:websocket-driver)
   (:import-from #:reblocks/hooks
                 #:call-next-hook)
-  (:import-from #:ps
+  (:import-from #:parenscript
                 #:symbol-to-js-string
                 #:chain
                 #:@)
