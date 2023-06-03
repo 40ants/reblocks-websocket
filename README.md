@@ -6,7 +6,7 @@
 
 ## REBLOCKS-WEBSOCKET ASDF System Details
 
-* Version: 0.1.0
+* Version: 0.4.0
 
 * Description: Reblocks extension adding a bidirectional communication via Websocket.
 
@@ -89,7 +89,7 @@ a framework makes all dirty work under the hood.
 
 <a id="x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-22REBLOCKS-WEBSOCKET-22-29-20PACKAGE-29"></a>
 
-#### [package](2cdf) `reblocks-websocket`
+#### [package](6adc) `reblocks-websocket`
 
 <a id="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -101,7 +101,7 @@ a framework makes all dirty work under the hood.
 
 <a id="x-28REBLOCKS-WEBSOCKET-3ANO-ACTIVE-WEBSOCKETS-20CONDITION-29"></a>
 
-###### [condition](091c) `reblocks-websocket:no-active-websockets` (error)
+###### [condition](d334) `reblocks-websocket:no-active-websockets` (error)
 
 <a id="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24WEBSOCKET-WIDGET-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -109,7 +109,7 @@ a framework makes all dirty work under the hood.
 
 <a id="x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29"></a>
 
-###### [class](d410) `reblocks-websocket:websocket-widget` (widget)
+###### [class](b78d) `reblocks-websocket:websocket-widget` (widget)
 
 <a id="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -117,11 +117,11 @@ a framework makes all dirty work under the hood.
 
 <a id="x-28REBLOCKS-WEBSOCKET-3ASEND-COMMAND-20FUNCTION-29"></a>
 
-##### [function](a8a2) `reblocks-websocket:send-command` method-name &rest args
+##### [function](d7f4) `reblocks-websocket:send-command` method-name &rest args
 
 <a id="x-28REBLOCKS-WEBSOCKET-3ASEND-SCRIPT-20FUNCTION-29"></a>
 
-##### [function](9776) `reblocks-websocket:send-script` script
+##### [function](1195) `reblocks-websocket:send-script` script
 
 Sends `JS` script to frontend via Websocket.
 
@@ -131,7 +131,7 @@ Sends `JS` script to frontend via Websocket.
 
 <a id="x-28REBLOCKS-WEBSOCKET-3AIN-THREAD-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](b214) `reblocks-websocket:in-thread` (thread-name) &body body
+##### [macro](72c8) `reblocks-websocket:in-thread` (thread-name) &body body
 
 Starts given piece of code in named thread, ensiring that reblocks/session::*session* and
 reblocks/request:*request* will be bound during it's execution.
@@ -145,7 +145,7 @@ between usual request processing and background activity.
 
 <a id="x-28REBLOCKS-WEBSOCKET-3A-2ABACKGROUND-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](a08f) `reblocks-websocket:*background*` nil
+##### [variable](3006) `reblocks-websocket:*background*` nil
 
 This variable becomes t during background processing.
 
@@ -154,13 +154,13 @@ This variable becomes t during background processing.
 [c36a]: https://40ants.com/reblocks-websocket/#x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29
 [b1a1]: https://github.com/40ants/reblocks-websocket
 [0497]: https://github.com/40ants/reblocks-websocket/actions
-[2cdf]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L1
-[d410]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L227
-[a08f]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L388
-[091c]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L392
-[9776]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L428
-[a8a2]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L448
-[b214]: https://github.com/40ants/reblocks-websocket/blob/2a0513db4a038a0ea2c62225b951f87a247ae139/src/websocket.lisp#L520
+[6adc]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L1
+[b78d]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L227
+[3006]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L388
+[d334]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L392
+[1195]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L427
+[d7f4]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L447
+[72c8]: https://github.com/40ants/reblocks-websocket/blob/1f00917c554c8881d7675f1906e381ccb304cf26/src/websocket.lisp#L519
 [e6f2]: https://github.com/40ants/reblocks-websocket/issues
 [ef5d]: https://github.com/svetlyak40wt/websocket-driver/tree/make-woo-work-from-separate-threads
 [8236]: https://quickdocs.org/alexandria
