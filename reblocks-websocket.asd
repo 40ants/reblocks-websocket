@@ -1,26 +1,13 @@
-(defsystem reblocks-websocket
-  :version (:read-file-form "version.lisp-expr")
-  :author ""
-  :license ""
-  :depends-on (:reblocks
-               :reblocks-parenscript
-               :websocket-driver)
-  :components ((:module "src"
-                :components
-                ((:file "websocket"))))
-  :description ""
-  :long-description
-  #.(with-open-file (stream (merge-pathnames
-                             #p"README.rst"
-                             (or *load-pathname* *compile-file-pathname*))
-                            :if-does-not-exist nil
-                            :direction :input)
-      (when stream
-        (let ((seq (make-array (file-length stream)
-                               :element-type 'character
-                               :fill-pointer t)))
-          (setf (fill-pointer seq)
-                (read-sequence seq stream))
-          seq)))
-  :in-order-to ((test-op (test-op reblocks-websocket-test))))
-
+#-asdf3.1 (error "reblocks-websocket requires ASDF 3.1 because for lower versions pathname does not work for package-inferred systems.")
+(defsystem "reblocks-websocket"
+  :description "Reblocks extension adding a bidirectional communication via Websocket."
+  :author "Alexander Artemenko <svetlyak.40wt@gmail.com>"
+  :license "Unlicense"
+  :homepage "https://40ants.com/reblocks-websocket/"
+  :source-control (:git "https://github.com/40ants/reblocks-websocket")
+  :bug-tracker "https://github.com/40ants/reblocks-websocket/issues"
+  :class :40ants-asdf-system
+  :defsystem-depends-on ("40ants-asdf-system")
+  :pathname "src"
+  :depends-on ("reblocks-websocket/websocket")
+  :in-order-to ((test-op (test-op "reblocks-websocket-tests"))))
