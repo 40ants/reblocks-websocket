@@ -1,6 +1,6 @@
 #-asdf3.1 (error "reblocks-websocket requires ASDF 3.1 because for lower versions pathname does not work for package-inferred systems.")
 (defsystem "reblocks-websocket"
-  :description "Reblocks extension adding a bidirectional communication via Websocket."
+  :description "Reblocks extension allowing to add a bidirectional communication via Websocket between a backend and Reblocks widgets."
   :author "Alexander Artemenko <svetlyak.40wt@gmail.com>"
   :license "Unlicense"
   :homepage "https://40ants.com/reblocks-websocket/"
