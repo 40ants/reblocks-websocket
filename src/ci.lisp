@@ -10,6 +10,11 @@
 (in-package #:reblocks-websocket-ci/ci)
 
 
+(defworkflow release
+  :on-push-to "master"
+  :jobs ((40ants-ci/jobs/autotag:autotag)))
+
+
 (defworkflow linter
   :on-push-to "master"
   :by-cron "0 10 * * 1"

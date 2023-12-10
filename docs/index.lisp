@@ -45,7 +45,8 @@
                                    "TODO"
                                    "Unlicense"
                                    "REPL"
-                                   "GIT"))
+                                   "GIT")
+                    :external-docs "https://40ants.com/reblocks/")
   (reblocks-websocket system)
   "
 [![](https://github-actions.40ants.com/40ants/reblocks-websocket/matrix.svg?only=ci.run-tests)](https://github.com/40ants/reblocks-websocket/actions)
