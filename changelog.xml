@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+    <channel>
+        <title>reblocks-websocket-docs ChangeLog</title>
+        <link>https://40ants.com/reblocks-websocket/</link>
+        <generator>xml-emitter</generator>
+        <language>en-us</language>
+        <item>
+            <title>0.5.0  (2022-12-10)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Support new Reblocks version where &lt;code&gt;REMOVED&lt;/code&gt; argument was added to &lt;a href=&quot;https://40ants.com/reblocks/widgets/#x-28REBLOCKS-2FWIDGET-3AUPDATE-20GENERIC-FUNCTION-29&quot;&gt;&lt;code&gt;reblocks/widget:update&lt;/code&gt;&lt;/a&gt; generic-function.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.0  (2019-08-02)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Library was fixed to work with latest &lt;code&gt;Woo&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.0  (2018-05-18)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added &lt;code&gt;send-command&lt;/code&gt; function, which can be used to call custom
+functions on the frontend.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;For example, you can update some progress bar&apos;s text with such code.&lt;/p&gt;&lt;p&gt;Add this as a dependency for your widget:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;lisp&quot;&gt;(weblocks-parenscript:make-dependency*
+  `(setf (@ window command-handlers update-progress)
+         (lambda (params)
+           (let ((new-text (@ params new-text)))
+              
+             ;; Updating the text of the progress-bar
+             (chain (j-query &amp;quot;.loading-progress&amp;quot;)
+                    (html new-text))))))&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After that, you can call this handler from the server-side:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;lisp&quot;&gt;(weblocks.websocket:send-command &apos;update-progress
+                                 :new-text &amp;quot;Processed 100500 items&amp;quot;)&lt;/code&gt;&lt;/pre&gt;</description>
+            <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.2.0  (2018-05-05)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Fixed to work under the Woo server (but others aren&apos;t supported for
+now), because this version of weblocks-websocket depends on a hack
+from the
+https://github.com/svetlyak40wt/websocket-driver/tree/make-woo-work-from-separate-threads
+branch, made in the
+https://github.com/svetlyak40wt/websocket-driver/commit/f9955b1fd99bac6cb744b72c734c7d845922ff6a commit.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.1.1  (2017-10-07)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Now macro &lt;code&gt;in-thread&lt;/code&gt; removes header &lt;code&gt;X-Requested-With&lt;/code&gt; from
+captured request object. This requires &lt;code&gt;weblocks &amp;gt;= 0.14.4&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.1.0  (2017-09-20)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Initial version.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
+        </item>
+    </channel>
+</rss>
