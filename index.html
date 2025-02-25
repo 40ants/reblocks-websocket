@@ -1,0 +1,146 @@
+<html lang=en>
+ <head>
+  <meta charset=UTF-8><meta name=viewport
+      content="width=device-width, initial-scale=1">
+  <title>reblocks-websocket - Reblocks extension adding a bidirectional 
+   communication via Websocket.</title>
+  <link rel=alternate
+        href="https://40ants.com/reblocks-websocket/changelog.xml"
+        type="application/rss+xml">
+  <link rel=stylesheet type="text/css"
+        href=theme.css>
+  <script type="text/javascript" src=jquery.js></script>
+  <script type="text/javascript" src=toc.js></script>
+  <script type="text/javascript">$(document).ready(function() {$('a:has(img)').css('border-bottom', 'none')})</script>
+  <link rel=stylesheet type="text/css"
+      href=highlight.min.css>
+  <script type="text/javascript"
+          src=highlight.min.js></script>
+  <script type="text/javascript">hljs.highlightAll();</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL71WXK73K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FL71WXK73K');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(42462884, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/42462884" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+ </head>
+ <body>
+  <div class=page><a id=fork-me href="https://github.com/40ants/reblocks-websocket">Fork me on GitHub</a>
+   <div class=navbar>
+    <div class=navbar-inner>
+     <a class=brand href="/">
+      <img class=logo
+           src="https://40ants.com/img/logo.svg"></a>
+     <ul class=nav>
+      <li><a href="/posts/">Blog</a>
+      <li><a href="/ru/posts/">Blog (RU)</a>
+      <li><a href="/tips/">Lisp Tips</a>
+      <li><a href="/projects/">Our Projects</a>
+      <li><a href="/about/">About</a>
+     </ul>
+    </div>
+   </div>
+   <input type=checkbox id=sidebar-check>
+   <label for=sidebar-check>
+    <div id=sidebar-trigger>
+     <span></span><span></span><span></span>
+    </div></label><div class=sidebar><div class=header><form class=search method=GET action="search/">
+      <input type=text name=q>
+      <input type=submit value=Search><span id=search-progress></span>
+     </form>
+    </div><div class=content><div class=page-toc><ul><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-40INDEX-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-40INDEX-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">reblocks-websocket - Reblocks extension adding a bidirectional communication via Websocket.</a></p><ul><li><p><a href="#reblocks-websocket-asdf-system-details" data-document="" data-node="reblocks-websocket-asdf-system-details">REBLOCKS-WEBSOCKET ASDF System Details</a></p></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40INSTALLATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40INSTALLATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Installation</a></p></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40USAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40USAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Usage</a></p></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">API</a></p><ul><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">REBLOCKS-WEBSOCKET</a></p><ul><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Classes</a></p><ul><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24NO-ACTIVE-WEBSOCKETS-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24NO-ACTIVE-WEBSOCKETS-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">NO-ACTIVE-WEBSOCKETS</a></p></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24WEBSOCKET-WIDGET-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24WEBSOCKET-WIDGET-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">WEBSOCKET-WIDGET</a></p></li></ul></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Functions</a></p></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Macros</a></p></li><li><p><a href="#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">Variables</a></p></li></ul></li></ul></li></ul></li><li><p><a href="changelog/#x-28REBLOCKS-WEBSOCKET-DOCS-2FCHANGELOG-3A-40CHANGELOG-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29" data-document="changelog/" data-node="x-28REBLOCKS-WEBSOCKET-DOCS-2FCHANGELOG-3A-40CHANGELOG-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29">ChangeLog</a></p></li></ul>
+     </div>
+    </div><div class=footer>
+     <a href="https://40ants.com/doc">[generated by 40ANTS-DOC]</a>
+    </div>
+   </div><div class=content role=main><h1>reblocks-websocket - Reblocks extension adding a bidirectional communication via Websocket.<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-40INDEX-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-40INDEX-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h1><h2 id="reblocks-websocket-asdf-system-details">REBLOCKS-WEBSOCKET ASDF System Details</h2><ul><li><p>Description: Reblocks extension allowing to add a bidirectional communication via Websocket between a backend and Reblocks widgets.</p></li><li><p>Licence: Unlicense</p></li><li><p>Author: Alexander Artemenko &lt;svetlyak.40wt@gmail.com&gt;</p></li><li><p>Homepage: <a href="https://40ants.com/reblocks-websocket/">https://40ants.com/reblocks-websocket/</a></p></li><li><p>Bug tracker: <a href="https://github.com/40ants/reblocks-websocket/issues">https://github.com/40ants/reblocks-websocket/issues</a></p></li><li><p>Source control: <a href="https://github.com/40ants/reblocks-websocket">GIT</a></p></li><li><p>Depends on: <a href="https://quickdocs.org/alexandria">alexandria</a>, <a href="https://quickdocs.org/bordeaux-threads">bordeaux-threads</a>, <a href="https://quickdocs.org/jonathan">jonathan</a>, <a href="https://quickdocs.org/log4cl-extras">log4cl-extras</a>, <a href="https://quickdocs.org/parenscript">parenscript</a>, <a href="https://quickdocs.org/reblocks">reblocks</a>, <a href="https://quickdocs.org/reblocks-parenscript">reblocks-parenscript</a>, <a href="https://quickdocs.org/serapeum">serapeum</a>, <a href="https://quickdocs.org/websocket-driver">websocket-driver</a></p></li></ul><p><a href="https://github.com/40ants/reblocks-websocket/actions"><img src="https://github-actions.40ants.com/40ants/reblocks-websocket/matrix.svg?only=ci.run-tests"/></a></p><p><img src="http://quickdocs.org/badge/reblocks-websocket.svg"/></p><p>This module allows you to push some information from backend to frontend
+and. In this case, updates of widgets's state on the client are
+initiated by server. For example, you can have some sort of long running
+process on the server and need to show it's status to the user.</p><h2>Installation<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40INSTALLATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40INSTALLATION-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><p>This library depends on Reblocks (Weblocks fork) and a websocket-driver.
+If you will use Woo server then probably you'll need this fork of the websocket-driver
+(<a href="https://github.com/svetlyak40wt/websocket-driver/tree/make-woo-work-from-separate-threads">make-woo-work-from-separate-threads</a> branch).
+However, may be the recent version of websocket-driver will work just find, I don't know.</p><p>You can install this library from Quicklisp, but you want to receive updates quickly, then install it from Ultralisp.org:</p><pre><code class="">(ql-dist:install-dist &quot;http://dist.ultralisp.org/&quot;
+                      :prompt nil)
+(ql:quickload :reblocks-websocket)</code></pre><h2>Usage<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40USAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40USAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><p>Define you widget and inherit it from the
+<a href="https://40ants.com/reblocks-websocket/#x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29" data-document="https://40ants.com/reblocks-websocket/" data-node="x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29"><code>reblocks-websocket:websocket-widget</code></a>:</p><pre><code class="lisp">(reblocks:defwidget counter-box (reblocks-websocket:websocket-widget)
+  ((counter :initform 0
+            :accessor counter)))</code></pre><p>Define a code which will start some sort of background activity. In this
+example we are doing it right when widget was created in the beginning
+of the user session, but of cause, you can do it as a reaction on an
+action.</p><pre><code class="lisp">(defmethod initialize-instance ((instance counter-box) &amp;rest restargs)
+  (declare (ignorable restargs))
+  (call-next-method)
+
+  (reblocks-websocket:in-thread (&quot;Update counter&quot;)
+    (sleep 3)
+    ;; Updating counter
+    (incf (counter instance))
+    (reblocks:update instance)))</code></pre><p>That is it. Define a render method as usual and use the widget on the
+page. Counter will be updated automatically. This works like a magic,
+a framework makes all dirty work under the hood.</p><h2>API<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40API-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h2><h3>REBLOCKS-WEBSOCKET<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h3><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L1">package</a><div class=reference-object><div class=object-name><a href=#x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-22REBLOCKS-WEBSOCKET-22-29-20PACKAGE-29 id=x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-22REBLOCKS-WEBSOCKET-22-29-20PACKAGE-29>reblocks-websocket</a></div></div><a class=bullet-link href=#x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-22REBLOCKS-WEBSOCKET-22-29-20PACKAGE-29></a></div></div><h4>Classes<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h4><h5>NO-ACTIVE-WEBSOCKETS<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24NO-ACTIVE-WEBSOCKETS-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24NO-ACTIVE-WEBSOCKETS-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h5><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L392">condition</a><div class=reference-object><div class=object-name><a href=#x-28REBLOCKS-WEBSOCKET-3ANO-ACTIVE-WEBSOCKETS-20CONDITION-29 id=x-28REBLOCKS-WEBSOCKET-3ANO-ACTIVE-WEBSOCKETS-20CONDITION-29>reblocks-websocket:no-active-websockets</a></div><div class=object-args><span class=locative-args></span></div></div><a class=bullet-link href=#x-28REBLOCKS-WEBSOCKET-3ANO-ACTIVE-WEBSOCKETS-20CONDITION-29></a></div></div><h5>WEBSOCKET-WIDGET<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24WEBSOCKET-WIDGET-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-40REBLOCKS-WEBSOCKET-24WEBSOCKET-WIDGET-3FCLASS-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h5><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L227">class</a><div class=reference-object><div class=object-name><a href=#x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29 id=x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29>reblocks-websocket:websocket-widget</a></div><div class=object-args><span class=locative-args></span></div></div><a class=bullet-link href=#x-28REBLOCKS-WEBSOCKET-3AWEBSOCKET-WIDGET-20CLASS-29></a></div></div><h4>Functions<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h4><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L447">function</a><div class=reference-object><div class=object-name><a href=#x-28REBLOCKS-WEBSOCKET-3ASEND-COMMAND-20FUNCTION-29 id=x-28REBLOCKS-WEBSOCKET-3ASEND-COMMAND-20FUNCTION-29>reblocks-websocket:send-command</a></div><div class=object-args><span class=locative-args>method-name &amp;rest args</span></div></div><a class=bullet-link href=#x-28REBLOCKS-WEBSOCKET-3ASEND-COMMAND-20FUNCTION-29></a></div></div><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L427">function</a><div class=reference-object><div class=object-name><a href=#x-28REBLOCKS-WEBSOCKET-3ASEND-SCRIPT-20FUNCTION-29 id=x-28REBLOCKS-WEBSOCKET-3ASEND-SCRIPT-20FUNCTION-29>reblocks-websocket:send-script</a></div><div class=object-args><span class=locative-args>script</span></div></div><a class=bullet-link href=#x-28REBLOCKS-WEBSOCKET-3ASEND-SCRIPT-20FUNCTION-29></a></div><div class=bullet-content><p>Sends <code>JS</code> script to frontend via Websocket.</p></div></div><h4>Macros<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h4><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L525">macro</a><div class=reference-object><div class=object-name><a href=#x-28REBLOCKS-WEBSOCKET-3AIN-THREAD-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29 id=x-28REBLOCKS-WEBSOCKET-3AIN-THREAD-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29>reblocks-websocket:in-thread</a></div><div class=object-args><span class=locative-args>(thread-name) &amp;body body</span></div></div><a class=bullet-link href=#x-28REBLOCKS-WEBSOCKET-3AIN-THREAD-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29></a></div><div class=bullet-content><p>Starts given piece of code in named thread, ensiring that reblocks/session::*session* and
+reblocks/request:*request* will be bound during it's execution.</p><p>Also, it set reblocks.websocket:*backround* to true, to make `update' method distinguish
+between usual request processing and background activity.</p></div></div><h4>Variables<a class=header-link
+     href=#x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29
+     title="Permalink to this headline"
+     id=x-28REBLOCKS-WEBSOCKET-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-WEBSOCKET-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29></a></h4><div class=reference-bullet><div class=reference-bullet-header><a class=locative-type href="https://github.com/40ants/reblocks-websocket/blob/bde773ad242d5e131780245efa480ec1a5425a6e/src/websocket.lisp#L388">variable</a><div class=reference-object><div class=object-name><a href=#x-28REBLOCKS-WEBSOCKET-3A-2ABACKGROUND-2A-20-28VARIABLE-29-29 id=x-28REBLOCKS-WEBSOCKET-3A-2ABACKGROUND-2A-20-28VARIABLE-29-29>reblocks-websocket:*background*</a></div><div class=object-args><span class=locative-args>nil</span></div></div><a class=bullet-link href=#x-28REBLOCKS-WEBSOCKET-3A-2ABACKGROUND-2A-20-28VARIABLE-29-29></a></div><div class=bullet-content><p>This variable becomes t during background processing.</p></div></div>
+   </div><div class=footer>
+    <hr class=separator>
+    <p class=fineprint>Created with passion by <em>40Ants</em><a class=lisp-logo
+     href="http://lisp-lang.org/">
+      <img
+           src="https://40ants.com/img/made-with-lisp.svg"></a>
+   </div>
+  </div>
+ </body>
+</html>
