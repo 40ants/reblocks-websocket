@@ -167,7 +167,7 @@
                                      :test #'string-equal))
                (page (or (reblocks/page:get-page-by-id page-id)
                          (return-from process-websocket
-                           (list :404
+                           (list 404
                                  (list :content-type "plain/text")
                                  (list (fmt "Page with id ~A not found." page-id))))))
                (*current-page* page)
