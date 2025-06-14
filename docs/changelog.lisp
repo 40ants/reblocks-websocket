@@ -9,6 +9,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.6.0 2025-06-15
+         "* Code was fixed to work with latest Reblocks and it's new routes.")
   (0.5.0 2022-12-10
          "* Support new Reblocks version where REMOVED argument was added to REBLOCKS/WIDGET:UPDATE generic-function.")
   (0.4.0 2019-08-02
